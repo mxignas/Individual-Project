@@ -1,8 +1,5 @@
 <template>
-    <Page class="mainBackground">
-        <ActionBar class="topTab">
-            <Label text="Settings"/>
-        </ActionBar>
+    <Page actionBarHidden="true" backgroundSpanUnderStatusBar="false" class="mainBackground">
 
         <GridLayout>
             <Label class="info">
@@ -32,8 +29,4 @@
     background-position: center;
     background-size: cover;
     }
-.topTab {
-    background-color: transparent;
-    font-size: 10px;
-}
 </style>

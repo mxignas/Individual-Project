@@ -1,5 +1,5 @@
 <template>
-    <Page class="mainBackground">
+    <Page actionBarHidden="true" backgroundSpanUnderStatusBar="false" class="mainBackground">
         <ActionBar class="topTab">
             <Label text="Scan your issue"/>
         </ActionBar>

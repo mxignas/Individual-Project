@@ -15,7 +15,7 @@ android {
     generatedDensities = []
   }
   project.ext {
-    googlePlayServicesVersion = "16.+"
+    googlePlayServicesVersion = "+"
   }
   aaptOptions {
     additionalParameters "--no-version-vectors"

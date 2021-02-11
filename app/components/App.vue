@@ -1,5 +1,5 @@
 <template lang="html">
-    <BottomNavigation>
+    <BottomNavigation selectedIndex="0">
         <TabStrip class="bottom_navigation">
             <TabStripItem class="navigation__item">
                 <Label text="Video"></Label>
