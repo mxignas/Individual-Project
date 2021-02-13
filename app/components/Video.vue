@@ -23,10 +23,11 @@
                     </TabStripItem>
                 </TabStrip>
 
+                
+
                 <TabContentItem>
                     <GridLayout>
-                        <Label text="Basics as asdasdasdasdasdasdassd"
-                            class="h2 text-center">
+                        <Label text="Basics as asdasdasdasdasdasdassd">
                         </Label>
                     </GridLayout>
                 </TabContentItem>
@@ -55,7 +56,7 @@
         </StackLayout>
 
     <!-- <StackLayout>
-            <YoutubePlayer id="player" src="NauWNGKLvZ8" apiKey="AIzaSyBKDRw6KAbQTXoLMu1kM37mevxg1QU_Wo0"/>
+            
         </StackLayout> -->
 
     </Page>
@@ -91,6 +92,10 @@ font-family: "321Perfect";
 TabStrip {
     selected-item-color: white;
     un-selected-item-color: black;
-    selected-item-background-color: white;
+    background-color: blue;    
+}
+TabContentItem.first-tabcontent {
+    background-color: olive;
+    color: seashell;
 }
 </style>

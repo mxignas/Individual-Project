@@ -5,12 +5,7 @@
         </ActionBar>
 
         <GridLayout>
-            <Label class="info">
-                <FormattedString>
-                    <Span class="fas" text.decode="&#xf135; "/>
-                    <Span :text="message"/>
-                </FormattedString>
-            </Label>
+            <YoutubePlayer id="player" src="NauWNGKLvZ8" apiKey="AIzaSyBKDRw6KAbQTXoLMu1kM37mevxg1QU_Wo0" height="300px" width="100%"/>
         </GridLayout>
     </Page>
 </template>
@@ -27,7 +22,7 @@
 
 <style>
 .mainBackground {
-    background-image: url('~/assets/Background.png');
+    background-image: url('~/assets/InfoBackground.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

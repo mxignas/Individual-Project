@@ -7,8 +7,8 @@ Vue.registerElement(
     () => require("nativescript-google-maps-sdk").MapView
 );
 
-// Vue.registerElement('YoutubePlayer', 
-// () => require('@triniwiz/nativescript-youtubeplayer').YoutubePlayer)
+Vue.registerElement('YoutubePlayer', 
+() => require('@triniwiz/nativescript-youtubeplayer').YoutubePlayer)
 
 Vue.config.silent = false;
 
