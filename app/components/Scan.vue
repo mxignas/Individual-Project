@@ -1,21 +1,22 @@
 <template>
     <Page actionBarHidden="true" backgroundSpanUnderStatusBar="false" class="mainBackground">
-        <ActionBar class="topTab">
-            <Label text="Scan your issue"/>
-        </ActionBar>
-
+        
         <GridLayout>
-            <YoutubePlayer id="player" src="NauWNGKLvZ8" apiKey="AIzaSyBKDRw6KAbQTXoLMu1kM37mevxg1QU_Wo0" height="300px" width="100%"/>
+            <!-- <YoutubePlayer id="player" src="Ml9pyQr7Cgc" apiKey="AIzaSyBKDRw6KAbQTXoLMu1kM37mevxg1QU_Wo0" height="800px" width="100%" @error="onError"/> -->
         </GridLayout>
+        
     </Page>
 </template>
 
 <script>
   export default {
-    computed: {
-      message() {
-        return "Blank {N}-Vue app";
+    data () {
+      return {
+        
       }
+    },
+    methods: {
+      
     }
   };
 </script>
