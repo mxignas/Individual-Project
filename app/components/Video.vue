@@ -2,7 +2,7 @@
     <Page actionBarHidden="true" backgroundSpanUnderStatusBar="false" class="mainBackground">
         <StackLayout>
             <Label text="TUTORIALS" height="200px"
-            color="white" id="tutorials-txt"/>
+            color="white" class="AboveTabsText"/>
 
         <Tabs selectedIndex="0">
         <!-- The bottom tab UI is created via TabStrip (the container) and TabStripItem (for each tab)-->
@@ -142,30 +142,9 @@ import { Utils } from "@nativescript/core";
 </script>
 
 <style>
-.mainBackground {
-    background-image: url('~/assets/InfoBackground.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
 .tabs {
     background-color:rgb(237, 28, 36);
     height: 160px;
-}
-#tutorials-txt {
-font-family: "321Perfect";
-  font-size: 50px;
-  text-align: center;
-  margin-top: 8%;
-  margin-bottom: 2%;
-}
-TabStrip {
-    selected-item-color: white;
-    un-selected-item-color: black;    
-}
-TabContentItem {
-    background-image: url('~/assets/VideoBackground.png');
-    background-size: cover;
 }
 .Youtube_Pic {
     margin-top: 50px;

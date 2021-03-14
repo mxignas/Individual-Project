@@ -21,3 +21,24 @@ $primary-color: #333;
     font-family: "Font Awesome 5 Free", "fa-regular-400";
     font-weight: 400;
 }
+.mainBackground {
+    background-image: url('~/assets/InfoBackground.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+TabStrip {
+    selected-item-color: white;
+    un-selected-item-color: black;    
+}
+TabContentItem {
+    background-image: url('~/assets/VideoBackground.png');
+    background-size: cover;
+}
+.AboveTabsText {
+font-family: "321Perfect";
+  font-size: 50px;
+  text-align: center;
+  margin-top: 8%;
+  margin-bottom: 2%;
+}
