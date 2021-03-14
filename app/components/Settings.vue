@@ -1,10 +1,10 @@
 <template>
-    <Page actionBarHidden="true" backgroundSpanUnderStatusBar="false" class="mainBackground">
+    <Page actionBarHidden="true" backgroundSpanUnderStatusBar="false" class="mainBackground"> 
 
-        <StackLayout>
-          <YoutubePlayer id="player" src="NauWNGKLvZ8" apiKey="AIzaSyBKDRw6KAbQTXoLMu1kM37mevxg1QU_Wo0"/>
-        </StackLayout>
-    </Page>
+      <StackLayout>
+        
+      </StackLayout>
+   </Page> 
 </template>
 
 <script>
@@ -13,6 +13,9 @@
       return {
 
       }
+    },
+    methods: {
+
     }
   }
 </script>
@@ -24,4 +27,8 @@
     background-position: center;
     background-size: cover;
     }
+.yt {
+  height: 100%;
+  width: 100%;
+}
 </style>
