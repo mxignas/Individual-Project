@@ -12,12 +12,16 @@
 android {
   defaultConfig {
     minSdkVersion 17
-    generatedDensities = []
+    targetSdkVersion 28
+    multiDexEnabled true
   }
   project.ext {
     googlePlayServicesVersion = "+"
   }
-  aaptOptions {
-    additionalParameters "--no-version-vectors"
+  // aaptOptions {
+  //   additionalParameters "--no-version-vectors"
+  // }
+  dependencies {
+    implementation 'com.android.support:multidex:1.0.3'
   }
 }

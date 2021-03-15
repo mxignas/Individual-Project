@@ -1,6 +1,18 @@
 import Vue from "nativescript-vue";
-import { Utils } from "@nativescript/core";
 import App from "./components/App";
+
+
+var firebase = require("@nativescript/firebase").firebase;
+firebase.init({
+}).then(
+    function () {
+        console.log("firebase.init done");
+    },
+    function (error) {
+        console.log("firebase.init error: " + error);
+    }
+);
+
 
 Vue.registerElement(
     "MapView",

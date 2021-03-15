@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "1069304290055",
+    "project_id": "xenon-hub-304010",
+    "storage_bucket": "xenon-hub-304010.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069304290055:android:7124167f6e5eb0145943a2",
+        "android_client_info": {
+          "package_name": "org.nativescript.mobileapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1069304290055-aigmst16bei6rca8aqfqhfq6fdd64bmp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClRlgQS-tzdKUXA-NFWd75F9a0RHkZ5nw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1069304290055-aigmst16bei6rca8aqfqhfq6fdd64bmp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069304290055:android:02eb7756ebf81bf55943a2",
+        "android_client_info": {
+          "package_name": "org.project.mxapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1069304290055-aigmst16bei6rca8aqfqhfq6fdd64bmp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClRlgQS-tzdKUXA-NFWd75F9a0RHkZ5nw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1069304290055-aigmst16bei6rca8aqfqhfq6fdd64bmp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
