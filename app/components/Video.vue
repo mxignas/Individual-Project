@@ -9,19 +9,19 @@
         <TabStrip class="tabs">
             <TabStripItem>
                 <Label text="Basics"/>
-                <Image src.decode="font://&#xf124;" class="fas t-36"></Image>
+                <Image src.decode="font://&#xf19d;" class="fas t-36"></Image>
             </TabStripItem>
             <TabStripItem>
                 <Label text="Corners"/>
-                <Image src.decode="font://&#xf124;" class="fas t-36"></Image>
+                <Image src.decode="font://&#xf19d;" class="fas t-36"></Image>
             </TabStripItem>
             <TabStripItem>
                 <Label text="Jumps"/>
-                <Image src.decode="font://&#xf124;" class="fas t-36"></Image>
+                <Image src.decode="font://&#xf19d;" class="fas t-36"></Image>
             </TabStripItem>
             <TabStripItem>
                 <Label text="Extra"/>
-                <Image src.decode="font://&#xf124;" class="fas t-36"></Image>
+                <Image src.decode="font://&#xf19d;" class="fas t-36"></Image>
             </TabStripItem>
         </TabStrip>
     
@@ -93,41 +93,15 @@
 
 <script>
 import { Utils } from "@nativescript/core";
+import {firestore} from "@nativescript/firebase"
+
   export default {
     data() {
         return {
-            Basics: [
-                {TubeLink: "https://www.youtube.com/watch?v=wIHQ6M-EZW0", Title: "Top 5 Tips on Getting Into Motocross - The ABSOLUTE BASICS", 
-                Picture: "~/assets/Basics1.png"},
-                {TubeLink: "https://www.youtube.com/watch?v=hTNlSMI-Zks", Title: "Top 5 Beginner Motocross Mistakes & How to Avoid Them", 
-                Picture: "~/assets/Basics2.png"},
-                {TubeLink: "https://www.youtube.com/watch?v=eo5OJY7dlGY", Title: "Five Essential Dirt Bike Skills and Tips", 
-                Picture: "~/assets/Basics3.png"}
-            ],
-            Jumps: [
-                {TubeLink: "https://www.youtube.com/watch?v=mS0_CfHNeYQ", Title: "How To Properly Jump a Dirt Bike - 3 Basic Techniques", 
-                Picture: "~/assets/Jump1.png"},
-                {TubeLink: "https://www.youtube.com/watch?v=25ETLZ4XB_U", Title: "How to Jump Your Dirt Bike Straight | 3 Easy Steps", 
-                Picture: "~/assets/Jump2.png"},
-                {TubeLink: "https://www.youtube.com/watch?v=eeLLE3ilrZ8", Title: "Learn How to Jump a Dirt Bike w/Adam Enticknap's Top 5 Tips", 
-                Picture: "~/assets/Jump3.png"}
-            ],
-            Corners: [
-                {TubeLink: "https://www.youtube.com/watch?v=CCUp7ur_WTs", Title: "Top 5 Pro Corner Dirt Bike Tips w/ Kris Keefer", 
-                Picture: "~/assets/Corners1.png"},
-                {TubeLink: "https://www.youtube.com/watch?v=fc4P-rJmEQg", Title: "How to Corner on a Dirt Bike - Basic Rut Technique", 
-                Picture: "~/assets/Corners2.png"},
-                {TubeLink: "https://www.youtube.com/watch?v=gSws2jFPjWo", Title: "Top 5 Dirt Bike Cornering Mistakes & Tips to Correct Them", 
-                Picture: "~/assets/Corners3.png"}
-            ],
-            Extras: [
-                {TubeLink: "https://www.youtube.com/watch?v=tPn4vFUAqIY&t", Title: "Title: How To: Ride Smooth and FAST!", 
-                Picture: "~/assets/Extra1.png"},
-                {TubeLink: "https://www.youtube.com/watch?v=ZSvghxUEFhk&t", Title: "5 Motocross Drills that will DRASTICALLY Improve your Dirt Bike Riding", 
-                Picture: "~/assets/Extra2.png"},
-                {TubeLink: "https://www.youtube.com/watch?v=Nq9GMkTxLz8", Title: "HOW TO WHIP", 
-                Picture: "~/assets/Extra3.png"}
-            ]
+            Basics: [],
+            Corners: [],
+            Jumps: [],
+            Extras: []
         }
       },
       methods: {
@@ -137,15 +111,51 @@ import { Utils } from "@nativescript/core";
           onVideoTap(event) {
             Utils.openUrl(event.item.TubeLink)
         }
-      }
+      },
+      mounted() {
+    //fetch data from the firestore
+    firestore.collection('Basics').get()
+    .then(snapshot => {
+        // navigating through each document inside that collection
+      snapshot.forEach((doc) => {
+        let basic = doc.data();
+        basic.id = doc.id;
+        this.Basics.push(basic)
+      })
+    })
+
+    firestore.collection('Corners').get()
+    .then(snapshot => {
+      snapshot.forEach((doc) => {
+        let corner = doc.data();
+        corner.id = doc.id;
+        this.Corners.push(corner)
+      })
+    })
+
+    firestore.collection('Jumps').get()
+    .then(snapshot => {
+      snapshot.forEach((doc) => {
+        let jump = doc.data();
+        jump.id = doc.id;
+        this.Jumps.push(jump)
+      })
+    })
+
+    firestore.collection('Extras').get()
+    .then(snapshot => {
+      snapshot.forEach((doc) => {
+        let extra = doc.data();
+        extra.id = doc.id;
+        this.Extras.push(extra)
+      })
+    })
+  } 
     };
 </script>
 
 <style>
-.tabs {
-    background-color:rgb(237, 28, 36);
-    height: 160px;
-}
+
 .Youtube_Pic {
     margin-top: 50px;
     border-width:2.5px;
