@@ -27,7 +27,6 @@
     
 <!-- Items in the TAB -->
 <TabContentItem >
-    <ScrollView orientation="vertical" >
         <ScrollView orientation="vertical" >
             <ListView for="basic in Basics" @itemTap="onVideoTap">
                 <v-template>
@@ -38,11 +37,9 @@
                     </StackLayout>
                 </v-template>
             </ListView>
-        </ScrollView>
     </ScrollView>
 </TabContentItem>
 <TabContentItem >
-    <ScrollView orientation="vertical" >
         <ScrollView orientation="vertical" >
             <ListView for="corner in Corners" @itemTap="onVideoTap">
                 <v-template>
@@ -54,10 +51,8 @@
                 </v-template>
             </ListView>
     </ScrollView>
-    </ScrollView>
 </TabContentItem>
 <TabContentItem >
-    <ScrollView orientation="vertical" >
         <ScrollView orientation="vertical" >
             <ListView for="jump in Jumps" @itemTap="onVideoTap">
                 <v-template>
@@ -68,7 +63,6 @@
                     </StackLayout>
                 </v-template>
             </ListView>
-    </ScrollView>
     </ScrollView>
 </TabContentItem>
 <TabContentItem >

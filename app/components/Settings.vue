@@ -19,22 +19,19 @@
     
 <!-- Items in the TAB -->
 <TabContentItem >
-    <ScrollView orientation="vertical" >
         <ScrollView orientation="vertical" >
-            <ListView for="husky in Husqvarnas">
+            <ListView for="husky in Husqvarnas" > <!-- @itemTap="onItemTap" -->
                 <v-template>
                     <StackLayout>
-                        <Image :src="`${husky.Image}`" stretch="aspectFit"  class="Youtube_Pic"></Image>
+                        <Image :src="`${husky.Image}`" stretch="aspectFit"  class="Youtube_Pic" @tap="openSettingsModal(husky)"></Image> <!-- @tap="openSettingsModal, onItemTap" -->
                         <Label class="text_below_youtube h2 text-center m-10" 
                             :text="`Model: ${husky.Model}`" textWrap="true"/>
                     </StackLayout>
                 </v-template>
             </ListView>
-        </ScrollView>
     </ScrollView>
 </TabContentItem>
 <TabContentItem >
-    <ScrollView orientation="vertical" >
         <ScrollView orientation="vertical" >
             <ListView for="ktm in Ktms">
                 <v-template>
@@ -46,7 +43,6 @@
                 </v-template>
             </ListView>
     </ScrollView>
-    </ScrollView>
 </TabContentItem>
 
       </Tabs>
@@ -56,7 +52,12 @@
 
 <script>
 import {firestore} from "@nativescript/firebase"
+import ModalComponent from "./ModalComponent";
+
   export default {
+    components: {
+      ModalComponent
+    },
     data() {
       return {
         Husqvarnas: [],
@@ -65,7 +66,13 @@ import {firestore} from "@nativescript/firebase"
     },
 
     methods: {
-      
+      openSettingsModal(husky) {
+          this.$showModal(ModalComponent, {
+            props: {item: husky},
+            animated: true,
+            dismissEnabled: true,
+          });
+      },
     },
     mounted() {
     //fetch data from the firestore collection and ordering by Model year in descending way
@@ -88,8 +95,6 @@ import {firestore} from "@nativescript/firebase"
         this.Ktms.push(ktm)
       })
     })
-
-        this.Ktms.sort();
       
   } 
 }
