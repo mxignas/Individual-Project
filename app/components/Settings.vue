@@ -20,10 +20,10 @@
 <!-- Items in the TAB -->
 <TabContentItem >
         <ScrollView orientation="vertical" >
-            <ListView for="husky in Husqvarnas" > <!-- @itemTap="onItemTap" -->
+            <ListView for="husky in Husqvarnas" >
                 <v-template>
                     <StackLayout>
-                        <Image :src="`${husky.Image}`" stretch="aspectFit"  class="Youtube_Pic" @tap="openSettingsModal(husky)"></Image> <!-- @tap="openSettingsModal, onItemTap" -->
+                        <Image :src="`${husky.Image}`" stretch="aspectFit"  class="Youtube_Pic" @tap="openSettingsModalHusky(husky)"></Image> <!-- @tap="openSettingsModal, onItemTap" -->
                         <Label class="text_below_youtube h2 text-center m-10" 
                             :text="`Model: ${husky.Model}`" textWrap="true"/>
                     </StackLayout>
@@ -36,7 +36,7 @@
             <ListView for="ktm in Ktms">
                 <v-template>
                     <StackLayout>
-                        <Image :src="`${ktm.Image}`" stretch="aspectFit"  class="Youtube_Pic"></Image>
+                        <Image :src="`${ktm.Image}`" stretch="aspectFit"  class="Youtube_Pic" @tap="openSettingsModalKtm(ktm)"></Image>
                         <Label class="text_below_youtube h2 text-center m-10" 
                             :text="`Title: ${ktm.Model}`" textWrap="true"/>
                     </StackLayout>
@@ -52,11 +52,14 @@
 
 <script>
 import {firestore} from "@nativescript/firebase"
-import ModalComponent from "./ModalComponent";
+import ModalComponentHusky from "./ModalComponentHusky";
+import ModalComponentKtm from "./ModalComponentKtm";
+
 
   export default {
     components: {
-      ModalComponent
+      ModalComponentHusky,
+      ModalComponentKtm
     },
     data() {
       return {
@@ -66,9 +69,16 @@ import ModalComponent from "./ModalComponent";
     },
 
     methods: {
-      openSettingsModal(husky) {
-          this.$showModal(ModalComponent, {
+      openSettingsModalHusky(husky) {
+          this.$showModal(ModalComponentHusky, {
             props: {item: husky},
+            animated: true,
+            dismissEnabled: true,
+          });
+      },
+      openSettingsModalKtm(ktm) {
+          this.$showModal(ModalComponentKtm, {
+            props: {item: ktm},
             animated: true,
             dismissEnabled: true,
           });
