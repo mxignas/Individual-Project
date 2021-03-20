@@ -1,5 +1,5 @@
 <template>
-	<StackLayout class="ModalComponent" backgroundColor="white">
+	<StackLayout class="ModalComponent">
 		<Label id="settingsTxt" text="Settings" />
 		<Label class="h2 text-center" style="color:white; font:bold;" :text="`Model: ${item.Model}`" />
 		<Label class="h2 text-center" style="color:red; font:bold;" text="Fork Settings" />
@@ -80,17 +80,14 @@ export default {
 </script>
 
 <style>
-.ModalComponent {
-	background-image: url('~/assets/InfoBackground.png');
-	background-size: cover;
-	width: 850px;
-	height: 1400px;
-	border-color: white;
-	border-width: 3px;
-}
 .button {
 	margin-top: 40px;
 	width: 200px;
+	height: 100px;
+	background-color: grey;
+	border-width: 3px;
+	border-color: white;
+	border-radius: 20px;
 }
 .ModalText {
 	color:white;

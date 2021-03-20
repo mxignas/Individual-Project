@@ -46,3 +46,12 @@ TabContentItem {
     background-color:rgb(237, 28, 36);
     height: 160px;
 }
+.ModalComponent {
+	background-image: url('~/assets/InfoBackground.png');
+	background-size: cover;
+	width: 850px;
+	height: 1400px;
+	border-color: white;
+	border-width: 3px;
+    border-radius: 20px;
+}

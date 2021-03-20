@@ -19,6 +19,9 @@ Vue.registerElement(
     () => require("nativescript-google-maps-sdk").MapView
 );
 
+Vue.registerElement("DropDown",
+    () => require("nativescript-drop-down").DropDown)
+
 Vue.config.silent = false;
 
 new Vue({

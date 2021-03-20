@@ -52,8 +52,8 @@
 
 <script>
 import {firestore} from "@nativescript/firebase"
-import ModalComponentHusky from "./ModalComponentHusky";
-import ModalComponentKtm from "./ModalComponentKtm";
+import ModalComponentHusky from "./Modals/ModalComponentHusky";
+import ModalComponentKtm from "./Modals/ModalComponentKtm";
 
 
   export default {
