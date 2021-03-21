@@ -80,15 +80,6 @@ export default {
 </script>
 
 <style>
-.button {
-	margin-top: 40px;
-	width: 200px;
-	height: 100px;
-	background-color: grey;
-	border-width: 3px;
-	border-color: white;
-	border-radius: 20px;
-}
 .ModalText {
 	color:white;
 }

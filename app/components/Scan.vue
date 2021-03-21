@@ -25,7 +25,7 @@
           </Label>
         </StackLayout>
 
-      <Button text="RESULTS" height="120px" width="450px" id="button_results" @tap="ResultsModal"/>
+      <Button text="RESULTS" height="120px" width="450px" id="button_results" @tap="ResultsModal()"/>
       <Button text="RESET COUNT" height="120px" width="450px" id="button_reset" @tap="Reset"/>
       <Image src.decode="font://&#xf128;" class="fas t-36" id="question_mark" @tap="question"></Image>
     </StackLayout>
@@ -33,12 +33,13 @@
 </template>
 
 <script>
-import ModalComponentSett from './Modals/ModalComponentSett'
+import ResultsModal from './Modals/ResultsModal'
 import QuestionMark from './Modals/QuestionMark'
 
   export default {
     components: {
-      ModalComponentSett
+      QuestionMark,
+      ResultsModal
     },
 
     data () {
@@ -57,17 +58,21 @@ import QuestionMark from './Modals/QuestionMark'
 
       LongFlash(){
         this.Longs = this.Longs + 1
-        console.log("longs: " + this.Longs)
-        console.log("selected: " + this.selectedItem)
       },
 
       ShortFlash(){
         this.Shorts = this.Shorts + 1
-        console.log("shorts: " + this.Shorts)
       },
 
       ResultsModal() {
-
+        this.$showModal(ResultsModal, {
+            props: {
+              longFlashes: this.Longs,
+              shortFlashes: this.Shorts
+              },
+            animated: true,
+            dismissEnabled: true,
+         })
       },
 
       Reset() {

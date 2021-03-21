@@ -9,6 +9,7 @@
             <Label text="• Count long and short flashes on your bike and then press same amount in the app" color="white" class="h3 questions" textWrap = true />
             <Label text="• When you are done, press 'Results' to see whats the issue" color="white" class="h3 questions" textWrap = true />            
             <Label text="• Tap 'Reset' if you made a mistake" color="white" class="h3 questions" textWrap = true />
+            <Label text="• If indicator lamp flashes 2x per second, leave flashes as 0-0 and tap 'Results'" color="white" class="h3 questions" textWrap = true />
             <Button class="btn btn-outline button" text="CLOSE" @tap="$modal.close()" />
         </StackLayout>
     </Page>
@@ -31,7 +32,7 @@
     border: none;
 	background-size: cover;
 	width: 900px;
-	height: 1250px;
+	height: 1450px;
 }
 .questions {
     padding-left: 15px;

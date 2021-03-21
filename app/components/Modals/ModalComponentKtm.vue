@@ -88,10 +88,6 @@ export default {
 	border-color: white;
 	border-width: 3px;
 }
-.button {
-	margin-top: 40px;
-	width: 200px;
-}
 .ModalText {
 	color:white;
 }
