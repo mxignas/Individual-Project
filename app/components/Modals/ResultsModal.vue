@@ -1,5 +1,6 @@
 <template>
     <Page actionBarHidden="true" backgroundSpanUnderStatusBar="false" class="mainBackground"> 
+        <!-- Using v-if and v-else-if for displaying correct code result -->
         <StackLayout id="ResultsModal" v-if="shortFlashes === 0 && longFlashes === 0">
             <Label textWrap = true id="settingsTxt" text="RESULTS" />
             <Label textWrap = true text="Malfunction indicator lamp flashes 2x per second" class="h2 text-center" id="results_text"/>
@@ -56,6 +57,7 @@
             <Label textWrap = true text="Battery voltage - input voltage too high" class="h3 text-center" style="color: red" />
             <Button class="btn btn-outline button" text="CLOSE" @tap="$modal.close()" />
         </StackLayout>
+        <!--  v-else if none of the above flashes matches the ones that are here -->
         <StackLayout id="ResultsModal" v-else>
             <Label textWrap = true id="settingsTxt" text="RESULTS" />
             <Label textWrap = true text="This code does not exist" class="h2 text-center" id="results_text" style="color: red"/>
@@ -66,6 +68,7 @@
 
 <script>
 export default {
+    // Getting Props from component, so I can use it here
 	props: {
 		shortFlashes: {
             type: Number

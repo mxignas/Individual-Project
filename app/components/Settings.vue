@@ -20,6 +20,7 @@
 <!-- Items in the TAB -->
 <TabContentItem >
         <ScrollView orientation="vertical" >
+          <!-- Using ListView to display each object with accessing its properties in Husqvarnas array -->
             <ListView for="husky in Husqvarnas" >
                 <v-template>
                     <StackLayout>
@@ -51,6 +52,7 @@
 </template>
 
 <script>
+// Importing modals and firestore
 import {firestore} from "@nativescript/firebase"
 import ModalComponentHusky from "./Modals/ModalComponentHusky";
 import ModalComponentKtm from "./Modals/ModalComponentKtm";
@@ -69,6 +71,7 @@ import ModalComponentKtm from "./Modals/ModalComponentKtm";
     },
 
     methods: {
+      // Opens up Modals, passing properties to its component.
       openSettingsModalHusky(husky) {
           this.$showModal(ModalComponentHusky, {
             props: {item: husky},

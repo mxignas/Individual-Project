@@ -65,6 +65,7 @@
 
 <script>
 export default {
+	// Getting Props from component, so I can use it here
 	props: {
 		item: {
 			type: Object
@@ -80,14 +81,6 @@ export default {
 </script>
 
 <style>
-.ModalComponent {
-	background-image: url('~/assets/InfoBackground.png');
-	background-size: cover;
-	width: 850px;
-	height: 1400px;
-	border-color: white;
-	border-width: 3px;
-}
 .ModalText {
 	color:white;
 }

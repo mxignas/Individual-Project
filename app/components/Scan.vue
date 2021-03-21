@@ -33,6 +33,7 @@
 </template>
 
 <script>
+// Importing modals
 import ResultsModal from './Modals/ResultsModal'
 import QuestionMark from './Modals/QuestionMark'
 
@@ -51,19 +52,20 @@ import QuestionMark from './Modals/QuestionMark'
       }
     },
     methods: {
+      // Indexes for dropDown
       dropDownSelectedIndexChanged(){
          let index = this.$refs.dropDownList.nativeView.selectedIndex;
          console.log("INDEX: " + index) 
       },
-
+      // Long Flash button add +1 to number
       LongFlash(){
         this.Longs = this.Longs + 1
       },
-
+      // Short Flash button add +1 to number
       ShortFlash(){
         this.Shorts = this.Shorts + 1
       },
-
+      // Opens up Results Modal and passing props to its component
       ResultsModal() {
         this.$showModal(ResultsModal, {
             props: {
@@ -74,12 +76,12 @@ import QuestionMark from './Modals/QuestionMark'
             dismissEnabled: true,
          })
       },
-
+      // Resets number to 0
       Reset() {
         this.Longs = 0;
         this.Shorts = 0;
       },
-
+      //  opens up question mark Modal
       question() {
         this.$showModal(QuestionMark, {
             animated: true,

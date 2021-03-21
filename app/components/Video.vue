@@ -28,6 +28,7 @@
 <!-- Items in the TAB -->
 <TabContentItem >
         <ScrollView orientation="vertical" >
+            <!-- Using ListView to display each object with accessing its properties in Basics array -->
             <ListView for="basic in Basics" @itemTap="onVideoTap">
                 <v-template>
                     <StackLayout>
@@ -86,6 +87,7 @@
 </template>
 
 <script>
+// Importing Utils library and firestore
 import { Utils } from "@nativescript/core";
 import {firestore} from "@nativescript/firebase"
 
@@ -99,9 +101,7 @@ import {firestore} from "@nativescript/firebase"
         }
       },
       methods: {
-          YoutubeLink () {
-              Utils.openUrl("https://www.youtube.com/")
-          },
+        //   When tapped, opens url which is in TubeLink property
           onVideoTap(event) {
             Utils.openUrl(event.item.TubeLink)
         }

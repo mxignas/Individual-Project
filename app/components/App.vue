@@ -1,4 +1,5 @@
 <template lang="html">
+<!-- Bottom navigation tag, selected index is first one = 0 -->
     <BottomNavigation selectedIndex="0">
         <TabStrip class="bottom_navigation">
             <TabStripItem class="navigation__item">
@@ -23,40 +24,37 @@
             </TabStripItem>
         </TabStrip>
 
+        <!-- Tab content items = first tabstripItem has to match first TabContentItem to display the correct component -->
         <TabContentItem>
             <Frame id="Video">
                 <Video/>
             </Frame>
         </TabContentItem>
-        
         <TabContentItem>
             <Frame id="Map">
                 <Map/>
             </Frame>
         </TabContentItem>
-
         <TabContentItem>
             <Frame id="Scan">
                 <Scan/>
             </Frame>
         </TabContentItem>
-
         <TabContentItem>
             <Frame id="Settings">
                 <Settings/>
             </Frame>
         </TabContentItem>
-
         <TabContentItem>
             <Frame id="About">
                 <About/>
             </Frame>
         </TabContentItem>
-
     </BottomNavigation>
 </template>
 
 <script>
+// importing components
   import Video from "./Video.vue";
   import About from "./About.vue";
   import Settings from "./Settings.vue";
@@ -75,7 +73,7 @@
 </script>
 
 <style>
-    .bottom_navigation {
-        background-color:rgb(237, 28, 36)
-    }
+.bottom_navigation {
+    background-color:rgb(237, 28, 36)
+}
 </style>

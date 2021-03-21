@@ -1,6 +1,7 @@
 <template>
     <Page actionBarHidden="true" backgroundSpanUnderStatusBar="false">
         <StackLayout height="100%" width="100%" >
+            <!-- Displaying MapView with needed properties -->
             <MapView iosOverflowSafeArea="true" :latitude="latitude" :longitude="longitude" :zoom="zoom" :bearing="bearing" :tilt="tilt" 
             height="100%" @mapReady="onMapReady"></MapView>
         </StackLayout>
@@ -12,7 +13,7 @@
 const geolocation = require("@nativescript/geolocation");
 // for markers
 const mapsModule = require("nativescript-google-maps-sdk");
-
+import {firestore} from "@nativescript/firebase"
 export default {
     data() {
         return {
@@ -25,65 +26,14 @@ export default {
             isMounted: false,
 
             // markers to mark the traks
-            markers: [
-                {
-                    name: "Pagiriu Motoklubo track",
-                    latitude: 25.17433447016864, // second
-                    longtitude: 54.50962346683085 // first
-                },
-                {
-                    name: "Utenos Aliu track",
-                    longtitude: 55.481555279529665,
-                    latitude: 25.723274521657224
-                },
-                {
-                    name: "Mickunai MX Park",
-                    longtitude: 55.63522832053927, 
-                    latitude: 25.288696685075738
-                },
-                {
-                    name: "Panevezys track",
-                    longtitude: 55.73581267270042, 
-                    latitude: 24.300087169733324
-                },
-                {
-                    name: "Aleksandrijos track",
-                    longtitude: 55.924588014954466, 
-                    latitude: 23.366496285087198
-                },
-                {
-                    name: "Dubysos track",
-                    longtitude: 55.6461976404172,
-                    latitude:  23.073311771363443 
-                },
-                {
-                    name: "Rietavo track",
-                    longtitude: 55.77617300394279,
-                    latitude:  22.095528517520155
-                },
-                 {
-                    name: "Prienu track",
-                    longtitude: 54.66052038540324, 
-                    latitude: 24.091685997460345
-                },
-                 {
-                    name: "Kalvarijos track",
-                    longtitude: 54.438390702580016, 
-                    latitude: 23.518451380780693
-                },
-                 {
-                    name: "Kedainiu track",
-                    longtitude: 55.321628876260945, 
-                    latitude: 23.98810125828695
-                },
-            ]
+            markers: []
         }
     },
     mounted() {
         let that = this
         geolocation.isEnabled().then(function(isEnabled) {
             if (!isEnabled) {
-                // requesting location
+                // requesting location from plugin
                 geolocation.enableLocationRequest(true, true).then(() => {
                     that.isMounted = true
                     if (that.mapView) {
@@ -147,6 +97,17 @@ export default {
             console.log("Error: " + (e.message || e));
         });
 
+    //fetch data from the firestore collection
+    firestore.collection('Tracks').get()
+    .then(snapshot => {
+      // navigating through each document inside that collection
+      snapshot.forEach((doc) => {
+        let track = doc.data();
+        track.id = doc.id;
+        this.markers.push(track)
+      })
+    })
+
     },
     methods: {
         onMapReady(args) {
@@ -181,5 +142,5 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 </style>
